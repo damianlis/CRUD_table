@@ -1,0 +1,67 @@
+.container {
+  width: 100%;
+  height: 92vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(245, 245, 245);
+}
+
+mat-card {
+  width: 60vw;
+  height: 80vh;
+  display: flex;
+  background-color: #673ab7;
+  color: rgb(245, 245, 245);
+}
+
+.item-container-1, .item-container-3 {
+  flex: 1 1 30%;
+  height: 100%;
+}
+
+.item-divider {
+  height: 100%;
+  width: 2px;
+  background-color: rgb(255, 255, 255);
+}
+
+.item-container-1 {
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 1s ease-in 2s both;
+
+  img {
+    max-height: 100%;
+    max-width: 100%;
+  }
+}
+
+.item-container-1 {
+  padding: 0 3em 0 2em;
+}
+
+.item-container-3 {
+  padding: 0 2em 0 4em;
+  line-height: 1.5em;
+  font-size: 1.25em;
+  animation: fadeInUp 1s ease-out 2s both;
+}
+
+.item-container-exp {
+  h5 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.9em;
+
+    &.small-paragraph {
+      font-size: 0.7em;
+    }
+  }
+}
+
+a {
+  color: rgb(255, 255, 255);
+  margin-right: 0.25em;
+}

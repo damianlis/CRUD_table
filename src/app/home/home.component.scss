@@ -1,0 +1,35 @@
+.container {
+  margin: 1em;
+}
+
+.table-container {
+  height: 80vh;
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+.container-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.header-cell-actions, .cell-actions {
+  text-align: center;
+  justify-content: center;
+}
+
+.create-btn, .edit-btn {
+  margin-right: 1em;
+}
+
+.mat-row:hover {
+  background-color: rgb(245,245,245);
+}

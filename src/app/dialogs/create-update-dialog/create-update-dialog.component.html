@@ -1,0 +1,74 @@
+<h2 mat-dialog-title>{{description | titlecase}}</h2>
+<mat-dialog-content [formGroup]="form">
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Username" formControlName="username">
+    <mat-error *ngIf="hasError('username', 'required')">
+      Username is required.
+    </mat-error>
+    <mat-error *ngIf="hasError('username', 'minlength')">
+      Username should be at least 5 characters long.
+    </mat-error>
+    <mat-error *ngIf="hasError('username', 'maxlength')">
+      Username can’t be more than 25 characters long.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Name" formControlName="name">
+    <mat-error *ngIf="hasError('name', 'required')">
+      Name is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="text" placeholder="Surname" formControlName="surname">
+    <mat-error *ngIf="hasError('surname', 'required')">
+      Surname is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput type="email" placeholder="Email" formControlName="email">
+    <mat-error *ngIf="hasError('email', 'required')">
+      Email is required.
+    </mat-error>
+    <mat-error *ngIf="hasError('email', 'email')">
+      Value has to be a valid email address.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Choose role</mat-label>
+    <mat-select formControlName="role">
+      <mat-option *ngFor="let role of userRoles" [value]="role">{{role | uppercase}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="hasError('role', 'required')">
+      Role is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Choose registration date</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="registrationDate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-error *ngIf="hasError('registrationDate', 'required')">
+      Registration date is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-checkbox formControlName="enabled">User Enabled</mat-checkbox>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-flat-button mat-dialog-close>{{cancelBtnTxt}}</button>
+  <button
+    mat-flat-button
+    color="accent"
+    [mat-dialog-close]="form"
+    [disabled]="!form.valid"
+  >
+    {{saveBtnTxt}}
+  </button>
+</mat-dialog-actions>

@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Carolyn_Hessel",
+      "name": "Paris",
+      "surname": "Morar",
+      "email": "Seamus.Cruickshank16@yahoo.com",
+      "role": "moderator",
+      "registrationDate": "2019-10-18T12:28:10.755Z",
+      "enabled": false
+    },
+    {
+      "username": "Luz_Bernier123",
+      "name": "Catharine",
+      "surname": "Baumbach",
+      "email": "Angeline.Harvey@yahoo.com",
+      "role": "user",
+      "registrationDate": "2019-11-15T00:46:31.245Z",
+      "enabled": true,
+      "id": 2
+    },
+    {
+      "id": 3,
+      "username": "Roderick49",
+      "name": "Karli",
+      "surname": "O'Kon",
+      "email": "Travon_Stracke21@hotmail.com",
+      "role": "moderator",
+      "registrationDate": "2019-11-29T02:05:30.016Z",
+      "enabled": true
+    },
+    {
+      "id": 4,
+      "username": "Maurine55",
+      "name": "Kara",
+      "surname": "Bode",
+      "email": "Oswald.Schiller8@yahoo.com",
+      "role": "user",
+      "registrationDate": "2020-04-27T13:38:26.850Z",
+      "enabled": false
+    },
+    {
+      "id": 5,
+      "username": "Marjorie_Lind80",
+      "name": "Arnoldo",
+      "surname": "Mueller",
+      "email": "Theresa53@hotmail.com",
+      "role": "admin",
+      "registrationDate": "2020-01-08T01:45:38.082Z",
+      "enabled": true
+    },
+    {
+      "id": 6,
+      "username": "Francesco11",
+      "name": "Susan",
+      "surname": "Gerlach",
+      "email": "Fabian_Wilderman@gmail.com",
+      "role": "moderator",
+      "registrationDate": "2020-06-02T20:22:32.504Z",
+      "enabled": false
+    },
+    {
+      "id": 7,
+      "username": "Paolo.Daugherty",
+      "name": "Jordon",
+      "surname": "Haley",
+      "email": "Ryan_Altenwerth11@gmail.com",
+      "role": "user",
+      "registrationDate": "2020-06-03T20:55:16.422Z",
+      "enabled": true
+    },
+    {
+      "id": 8,
+      "username": "Ova_Wolf",
+      "name": "Halie",
+      "surname": "Schaefer",
+      "email": "Ally8@gmail.com",
+      "role": "user",
+      "registrationDate": "2020-07-12T22:39:04.279Z",
+      "enabled": false
+    },
+    {
+      "id": 10,
+      "username": "Ardella.Grant",
+      "name": "Lyric",
+      "surname": "Hilll",
+      "email": "Beatrice_Fritsch92@gmail.com",
+      "role": "admin",
+      "registrationDate": "2019-12-21T12:38:15.570Z",
+      "enabled": false
+    },
+    {
+      "username": "test_testowy",
+      "name": "testImie",
+      "surname": "testNazwisko",
+      "email": "test@test.pl",
+      "role": "admin",
+      "registrationDate": "2020-07-28T11:21:10.426Z",
+      "enabled": true,
+      "id": 11
+    }
+  ]
+}
