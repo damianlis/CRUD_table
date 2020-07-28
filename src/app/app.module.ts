@@ -9,8 +9,8 @@ import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
 import {SharedModule} from './shared/shared.module';
 import {ShellComponent} from './shell/shell.component';
-import { DeleteDialogComponent } from './dialogs/delete-dialog/delete-dialog.component';
-import { CreateUpdateDialogComponent } from './dialogs/create-update-dialog/create-update-dialog.component';
+import {DeleteDialogComponent} from './dialogs/delete-dialog/delete-dialog.component';
+import {CreateUpdateDialogComponent} from './dialogs/create-update-dialog/create-update-dialog.component';
 import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
@@ -23,6 +23,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     CreateUpdateDialogComponent
   ],
   entryComponents: [
+    CreateUpdateDialogComponent,
     DeleteDialogComponent
   ],
   imports: [

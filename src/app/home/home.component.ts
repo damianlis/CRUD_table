@@ -7,6 +7,7 @@ import {debounceTime, distinctUntilChanged, filter, map} from 'rxjs/operators';
 import {MatDialog} from '@angular/material/dialog';
 import {DeleteDialogComponent} from '../dialogs/delete-dialog/delete-dialog.component';
 import {CreateUpdateDialogComponent} from '../dialogs/create-update-dialog/create-update-dialog.component';
+import {User} from '../shared/user-interface';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,6 @@ import {CreateUpdateDialogComponent} from '../dialogs/create-update-dialog/creat
 })
 export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
-  users = [];
   dataSource = new MatTableDataSource<User>();
   columns: string[] = [
     'username',
@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     'enabled',
     'actions'
   ];
-  subs: Subscription[] = [];
+  private subs: Subscription[] = [];
 
   @ViewChild(MatSort, {static: true}) sort: MatSort;
   @ViewChild('input', {static: true}) input: ElementRef;
@@ -35,7 +35,8 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   constructor(
     private apiService: ApiService,
     public dialog: MatDialog
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.getRecords();
@@ -59,11 +60,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     return this.dataSource.data.length < 2;
   }
 
-  doFilter(value: string): void {
-    this.dataSource.filter = value.trim().toLowerCase();
-  }
-
-  openCreateEditDialog(user?: User): void {
+  public openCreateEditDialog(user?: User): void {
     const dialogRef = this.dialog.open(CreateUpdateDialogComponent, {
       width: '300px',
       data: {
@@ -86,7 +83,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
-  openDeleteDialog(userId: number): void {
+  public openDeleteDialog(userId: number): void {
     const dialogRef = this.dialog.open(DeleteDialogComponent, {
       data: {
         description: 'delete user',
@@ -105,9 +102,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     });
   }
 
+  private doFilter(value: string): void {
+    this.dataSource.filter = value.trim().toLowerCase();
+  }
+
   private getRecords(): void {
     this.apiService.get().subscribe((users: User[]) => {
-      this.users = users;
       this.dataSource.data = users;
     });
   }
@@ -127,15 +127,4 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnDestroy(): void {
     this.subs.forEach(sub => sub.unsubscribe());
   }
-}
-
-export interface User {
-  id: number;
-  username: string;
-  name: string;
-  surname: string;
-  email: string;
-  role: string;
-  registrationDate: Date;
-  enabled: boolean;
 }
